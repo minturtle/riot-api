@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="RiotAPIConnectionTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-10-04T06:12:09" hostname="DESKTOP-GQVIB6Q" time="9.659">
+<testsuite name="RiotAPIConnectionTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-10-04T14:16:59" hostname="DESKTOP-6AQFF8V" time="0.757">
   <properties/>
-  <testcase name="소환사 이름으로 게임 ID 조회" classname="RiotAPIConnectionTest" time="9.659"/>
-  <system-out><![CDATA[
-]]></system-out>
+  <testcase name="연결 확인" classname="RiotAPIConnectionTest" time="0.065"/>
+  <testcase name="소환사 이름으로 조회" classname="RiotAPIConnectionTest" time="0.691"/>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

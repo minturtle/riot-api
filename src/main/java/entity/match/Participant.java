@@ -1,5 +1,13 @@
 package entity.match;
 
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Participant {
     private Integer assists;
     private Integer baronKills;
@@ -22,5 +30,76 @@ public class Participant {
     private Boolean firstTowerKill;
     private Integer goldEarned;
     private Integer goldSpent;
-
+    private String individualPosition;
+    private Integer inhibitorKills;
+    private Integer inhibitorTakedowns;
+    private Integer inhibitorLost;
+    private Integer item0;
+    private Integer item1;
+    private Integer item2;
+    private Integer item3;
+    private Integer item4;
+    private Integer item5;
+    private Integer item6;
+    private Integer itemPurchased;
+    private Integer killingSprees;
+    private Integer kills;
+    private String lane;
+    private Integer largestKillingSpree;
+    private Integer largestMiltiKill;
+    private Integer longestTimeSpentLiving;
+    private Integer magicDamageDealt;
+    private Integer magidDamageDealtToChampions;
+    private Integer magicDamageTaken;
+    private Integer neutralMinionsKilled;
+    private Integer objectivesStolen;
+    private Integer objectivesStolenAssists;
+    private Integer participantId;
+    private Integer pentakills;
+    private Integer physicalDamageDealt;
+    private Integer physicalDamageDealtToChampions;
+    private Integer physicalDamageTaken;
+    private String puuid;
+    private Integer quadraKills;
+    private String role;
+    private Integer sightWardsBoughtInGame;
+    private Integer spell1Casts;
+    private Integer spell2Casts;
+    private Integer spell3Casts;
+    private Integer spell4Casts;
+    private Integer summoner1Casts;
+    private Integer summoner1Id;
+    private Integer summoner2Casts;
+    private Integer summoner2Id;
+    private Integer summonerId;
+    private Integer summonerLevel;
+    private Integer summonerName;
+    private Boolean teamEarlySurrendered;
+    private Integer teamId;
+    private String teamPosition;
+    private Integer timeCCingOthers;
+    private Integer timePlayed;
+    private Integer totalDamageDealt;
+    private Integer totalDamageDealtToChampions;
+    private Integer totalDamageShieldedOnTeammates;
+    private Integer totalDamageTaken;
+    private Integer totalHeal;
+    private Integer totalHealsOnTeammates;
+    private Integer totalMinionsKilled;
+    private Integer totalTimeCCDealt;
+    private Integer totalTimeSpendDead;
+    private Integer totalUnitsHealed;
+    private Integer tripleKills;
+    private Integer trueDamageDealt;
+    private Integer trueDamageDealtToChampions;
+    private Integer trueDamageTaken;
+    private Integer turretKills;
+    private Integer turretTakedowns;
+    private Integer turretsLost;
+    private Integer unrealKills;
+    private Integer visionScore;
+    private Integer visionWardsBoughtInGame;
+    private Integer wardsKilled;
+    private Integer wardsPlaced;
+    private Boolean win;
 }
