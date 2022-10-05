@@ -16,7 +16,7 @@ public class RiotAPIConnection {
     private static final String REQUEST_METHOD_GET = "GET";
     private static final String REQUEST_TOKEN_KEY = "X-Riot-Token";
 
-    private ObjectMapper objectMapper = new ObjectMapper();
+    private final ObjectMapper objectMapper = new ObjectMapper();
 
     private final String RiotToken;
 
