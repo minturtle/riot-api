@@ -1,6 +1,6 @@
 public class Config {
 
     public static String getRiotToken(){
-        return "RGAPI-344f1b52-c231-43cb-ae66-cd572b13b2fe";
+        return "RGAPI-2e9f682c-190b-4733-a070-0016abe1b873";
     }
 }

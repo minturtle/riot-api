@@ -1,3 +1,4 @@
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import entity.Summoner;
 import entity.match.Match;
@@ -22,6 +23,7 @@ public class RiotAPIConnection {
 
     public RiotAPIConnection(String riotToken) {
         RiotToken = riotToken;
+        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
     }
 
 
@@ -39,21 +41,16 @@ public class RiotAPIConnection {
 
 
     public List<Match> getMatchesBySummonerName(String summonerName, int startIndex, int count) throws RuntimeException, IOException{
-        Summoner summoner = getSummonerByName(summonerName);
-        String urlString = ASIA_DEFAULT_HOST +  "/lol/match/v5/matches/by-puuid/" +
-                URLEncoder.encode(summoner.getPuuid(), "UTF-8") + "/ids" +
-                "?start=" + startIndex + "&count=" + count;
+        final List<String> matchIdList = getMatchIdList(summonerName, startIndex, count);
 
-        URL url = new URL(urlString);
+        return matchIdList.stream().map(matchId->{
+            try{
+                return getMatchById(matchId);
+            }catch (IOException e){return null;}
+        }).collect(Collectors.toList());
 
-        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-        setHttpHeader(conn);
-
-        List<String> matchIdList = (List<String>) getResponseBody(conn, List.class).stream().map(Object::toString).collect(Collectors.toList());
-
-
-        return null;
     }
+
 
     public Match getMatchById(String matchId) throws RuntimeException, IOException{
         URL url = new URL("https://asia.api.riotgames.com/lol/match/v5/matches/" + matchId);
@@ -97,6 +94,19 @@ public class RiotAPIConnection {
         return objectMapper.readValue(sb.toString() , clazz);
     }
 
+    private List<String> getMatchIdList(String summonerName, int startIndex, int count) throws IOException {
+        Summoner summoner = getSummonerByName(summonerName);
+        String urlString = ASIA_DEFAULT_HOST +  "/lol/match/v5/matches/by-puuid/" +
+                URLEncoder.encode(summoner.getPuuid(), "UTF-8") + "/ids" +
+                "?start=" + startIndex + "&count=" + count;
+
+        URL url = new URL(urlString);
+
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        setHttpHeader(conn);
+
+        return (List<String>) getResponseBody(conn, List.class).stream().map(Object::toString).collect(Collectors.toList());
+    }
 
 
 

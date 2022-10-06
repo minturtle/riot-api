@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor
-@AllArgsConstructor
 public class Participant {
     private Integer assists;
     private Integer baronKills;
@@ -71,9 +70,9 @@ public class Participant {
     private Integer summoner1Id;
     private Integer summoner2Casts;
     private Integer summoner2Id;
-    private Integer summonerId;
+    private String summonerId;
     private Integer summonerLevel;
-    private Integer summonerName;
+    private String summonerName;
     private Boolean teamEarlySurrendered;
     private Integer teamId;
     private String teamPosition;

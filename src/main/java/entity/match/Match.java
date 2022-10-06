@@ -1,9 +1,12 @@
 package entity.match;
 
 
-public class Match {
+import lombok.Getter;
 
-    private MetaData metaData;
+@Getter
+public class Match {
+    private MetaData metadata;
+
     private Info info;
 
 }
