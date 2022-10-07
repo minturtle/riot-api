@@ -10,10 +10,12 @@ import static org.assertj.core.api.Assertions.*;
 
 class RiotAPIConnectionTest {
 
-    private RiotAPIConnection con = new RiotAPIConnection(Config.getRiotToken());
+    private RiotAPIConnection con = new RiotAPIConnection("not-used-token");
     private static final String summonerName1 = "철이네이삿짐센터";
     private static final String summonerName2 = "근 뇽";
     private static final String matchId = "KR_6159112812";
+
+
     @Test
     @DisplayName("연결 확인")
     void t1(){
@@ -26,6 +28,7 @@ class RiotAPIConnectionTest {
     void t2() throws Exception{
         Summoner findSummoner1 = con.getSummonerByName(summonerName1);
         Summoner findSummoner2 = con.getSummonerByName(summonerName2);
+
 
         assertThat(findSummoner1.getName()).isEqualTo(summonerName1);
         assertThat(findSummoner2.getName()).isEqualTo(summonerName2);
